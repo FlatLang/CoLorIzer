@@ -1,0 +1,23 @@
+{
+  "name": "CoLorIzer",
+  "version": "0.1.0",
+  "description": "Flat CLI Colorizer Library",
+  "author": "Braden Steffaniak",
+  "license": "ISC",
+  "defaultTarget": "es6",
+  "scripts": {
+    "test": "node dist/test.js"
+  },
+  "main": {
+    "source": "src",
+    "dependencies": {
+    }
+  },
+  "test": {
+    "mainClass": "flat/colorizer/Colorizer_TestSuite",
+    "source": "src",
+    "dependencies": {
+      "github:FlatLang/Nest": "master"
+    }
+  }
+}

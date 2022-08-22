@@ -1,0 +1,51 @@
+package flat/colorizer
+
+class {
+  let static String PREFIX = "\x1b["
+
+  let static String RESET = "0m"
+  let static String BRIGHT = "1m"
+  let static String DIM = "2m"
+  let static String UNDERSCORE = "4m"
+  let static String BLINK = "5m"
+  let static String REVERSE = "7m"
+  let static String HIDDEN = "8m"
+
+  let static String BLACK_FOREGROUND = "30m"
+  let static String RED_FOREGROUND = "31m"
+  let static String GREEN_FOREGROUND = "32m"
+  let static String YELLOW_FOREGROUND = "33m"
+  let static String BLUE_FOREGROUND = "34m"
+  let static String MAGENTA_FOREGROUND = "35m"
+  let static String CYAN_FOREGROUND = "36m"
+  let static String WHITE_FOREGROUND = "37m"
+
+  let static String BLACK_BACKGROUND = "40m"
+  let static String RED_BACKGROUND = "41m"
+  let static String GREEN_BACKGROUND = "42m"
+  let static String YELLOW_BACKGROUND = "43m"
+  let static String BLUE_BACKGROUND = "44m"
+  let static String MAGENTA_BACKGROUND = "45m"
+  let static String CYAN_BACKGROUND = "46m"
+  let static String WHITE_BACKGROUND = "47m"
+
+  public static raw(String color, String value) => "#{PREFIX}#{color}#{value}#{PREFIX}#{RESET}"
+
+  public static black(String value) => raw(BLACK_FOREGROUND, value)
+  public static red(String value) => raw(RED_FOREGROUND, value)
+  public static green(String value) => raw(GREEN_FOREGROUND, value)
+  public static yellow(String value) => raw(YELLOW_FOREGROUND, value)
+  public static blue(String value) => raw(BLUE_FOREGROUND, value)
+  public static magenta(String value) => raw(MAGENTA_FOREGROUND, value)
+  public static cyan(String value) => raw(CYAN_FOREGROUND, value)
+  public static white(String value) => raw(WHITE_FOREGROUND, value)
+
+  public static blackBackground(String value) => raw(BLACK_BACKGROUND, value)
+  public static redBackground(String value) => raw(RED_BACKGROUND, value)
+  public static greenBackground(String value) => raw(GREEN_BACKGROUND, value)
+  public static yellowBackground(String value) => raw(YELLOW_BACKGROUND, value)
+  public static blueBackground(String value) => raw(BLUE_BACKGROUND, value)
+  public static magentaBackground(String value) => raw(MAGENTA_BACKGROUND, value)
+  public static cyanBackground(String value) => raw(CYAN_BACKGROUND, value)
+  public static whiteBackground(String value) => raw(WHITE_BACKGROUND, value)
+}
