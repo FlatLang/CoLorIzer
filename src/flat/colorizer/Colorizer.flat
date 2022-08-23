@@ -31,6 +31,14 @@ class {
 
   public static format(String code, String value) => "#{PREFIX}#{code}#{value}#{PREFIX}#{RESET}"
 
+  public static reset(String value) => format(RESET, value)
+  public static bright(String value) => format(BRIGHT, value)
+  public static dim(String value) => format(DIM, value)
+  public static underscore(String value) => format(UNDERSCORE, value)
+  public static blink(String value) => format(BLINK, value)
+  public static reverse(String value) => format(REVERSE, value)
+  public static hidden(String value) => format(HIDDEN, value)
+
   public static black(String value) => format(BLACK_FOREGROUND, value)
   public static red(String value) => format(RED_FOREGROUND, value)
   public static green(String value) => format(GREEN_FOREGROUND, value)
