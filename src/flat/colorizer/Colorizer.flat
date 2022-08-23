@@ -29,23 +29,23 @@ class {
   let static String CYAN_BACKGROUND = "46m"
   let static String WHITE_BACKGROUND = "47m"
 
-  public static raw(String color, String value) => "#{PREFIX}#{color}#{value}#{PREFIX}#{RESET}"
+  public static format(String code, String value) => "#{PREFIX}#{code}#{value}#{PREFIX}#{RESET}"
 
-  public static black(String value) => raw(BLACK_FOREGROUND, value)
-  public static red(String value) => raw(RED_FOREGROUND, value)
-  public static green(String value) => raw(GREEN_FOREGROUND, value)
-  public static yellow(String value) => raw(YELLOW_FOREGROUND, value)
-  public static blue(String value) => raw(BLUE_FOREGROUND, value)
-  public static magenta(String value) => raw(MAGENTA_FOREGROUND, value)
-  public static cyan(String value) => raw(CYAN_FOREGROUND, value)
-  public static white(String value) => raw(WHITE_FOREGROUND, value)
+  public static black(String value) => format(BLACK_FOREGROUND, value)
+  public static red(String value) => format(RED_FOREGROUND, value)
+  public static green(String value) => format(GREEN_FOREGROUND, value)
+  public static yellow(String value) => format(YELLOW_FOREGROUND, value)
+  public static blue(String value) => format(BLUE_FOREGROUND, value)
+  public static magenta(String value) => format(MAGENTA_FOREGROUND, value)
+  public static cyan(String value) => format(CYAN_FOREGROUND, value)
+  public static white(String value) => format(WHITE_FOREGROUND, value)
 
-  public static blackBackground(String value) => raw(BLACK_BACKGROUND, value)
-  public static redBackground(String value) => raw(RED_BACKGROUND, value)
-  public static greenBackground(String value) => raw(GREEN_BACKGROUND, value)
-  public static yellowBackground(String value) => raw(YELLOW_BACKGROUND, value)
-  public static blueBackground(String value) => raw(BLUE_BACKGROUND, value)
-  public static magentaBackground(String value) => raw(MAGENTA_BACKGROUND, value)
-  public static cyanBackground(String value) => raw(CYAN_BACKGROUND, value)
-  public static whiteBackground(String value) => raw(WHITE_BACKGROUND, value)
+  public static blackBackground(String value) => format(BLACK_BACKGROUND, value)
+  public static redBackground(String value) => format(RED_BACKGROUND, value)
+  public static greenBackground(String value) => format(GREEN_BACKGROUND, value)
+  public static yellowBackground(String value) => format(YELLOW_BACKGROUND, value)
+  public static blueBackground(String value) => format(BLUE_BACKGROUND, value)
+  public static magentaBackground(String value) => format(MAGENTA_BACKGROUND, value)
+  public static cyanBackground(String value) => format(CYAN_BACKGROUND, value)
+  public static whiteBackground(String value) => format(WHITE_BACKGROUND, value)
 }
