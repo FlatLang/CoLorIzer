@@ -29,7 +29,15 @@ class {
   let static String CYAN_BACKGROUND = "46m"
   let static String WHITE_BACKGROUND = "47m"
 
-  public static format(String code, String value) => "#{PREFIX}#{code}#{value}#{PREFIX}#{RESET}"
+  public static format(String code, String value) -> String {
+    let stripped = if (code != RESET) {
+      value.replace("#{PREFIX}#{RESET}", "#{PREFIX}#{RESET}#{PREFIX}#{code}")
+    } else {
+      value
+    }
+
+    return "#{PREFIX}#{code}#{stripped}#{PREFIX}#{RESET}"
+  }
 
   public static reset(String value) => format(RESET, value)
   public static bright(String value) => format(BRIGHT, value)
