@@ -19,6 +19,7 @@ class {
   let static String MAGENTA_FOREGROUND = "35m"
   let static String CYAN_FOREGROUND = "36m"
   let static String WHITE_FOREGROUND = "37m"
+  let static String RGB_FOREGROUND = "38"
   let static String GRAY_FOREGROUND = "90m"
   let static String BRIGHT_BLACK_FOREGROUND = "90m"
   let static String BRIGHT_RED_FOREGROUND = "91m"
@@ -37,6 +38,7 @@ class {
   let static String MAGENTA_BACKGROUND = "45m"
   let static String CYAN_BACKGROUND = "46m"
   let static String WHITE_BACKGROUND = "47m"
+  let static String RGB_BACKGROUND = "48"
   let static String GRAY_BACKGROUND = "100m"
   let static String BRIGHT_BLACK_BACKGROUND = "100m"
   let static String BRIGHT_RED_BACKGROUND = "101m"
@@ -65,6 +67,8 @@ class {
   public static reverse(String value) => format(REVERSE, value)
   public static hidden(String value) => format(HIDDEN, value)
 
+  public static rgb(String value, Int r, Int g, Int b) => format(RGB_FOREGROUND + ";2;#{r};#{g};#{b}m", value)
+  public static foreground256(String value, Int num) => format(RGB_FOREGROUND + ";5;#{num}m", value)
   public static black(String value) => format(BLACK_FOREGROUND, value)
   public static red(String value) => format(RED_FOREGROUND, value)
   public static green(String value) => format(GREEN_FOREGROUND, value)
@@ -83,6 +87,8 @@ class {
   public static brightCyan(String value) => format(CYAN_FOREGROUND, value)
   public static brightWhite(String value) => format(WHITE_FOREGROUND, value)
 
+  public static rgbBackground(String value, Int r, Int g, Int b) => format(RGB_BACKGROUND + ";2;#{r};#{g};#{b}m", value)
+  public static background256(String value, Int num) => format(RGB_BACKGROUND + ";5;#{num}m", value)
   public static blackBackground(String value) => format(BLACK_BACKGROUND, value)
   public static redBackground(String value) => format(RED_BACKGROUND, value)
   public static greenBackground(String value) => format(GREEN_BACKGROUND, value)
