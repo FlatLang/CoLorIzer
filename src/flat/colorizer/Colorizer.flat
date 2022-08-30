@@ -19,6 +19,15 @@ class {
   let static String MAGENTA_FOREGROUND = "35m"
   let static String CYAN_FOREGROUND = "36m"
   let static String WHITE_FOREGROUND = "37m"
+  let static String GRAY_FOREGROUND = "90m"
+  let static String BRIGHT_BLACK_FOREGROUND = "90m"
+  let static String BRIGHT_RED_FOREGROUND = "91m"
+  let static String BRIGHT_GREEN_FOREGROUND = "92m"
+  let static String BRIGHT_YELLOW_FOREGROUND = "93m"
+  let static String BRIGHT_BLUE_FOREGROUND = "94m"
+  let static String BRIGHT_MAGENTA_FOREGROUND = "95m"
+  let static String BRIGHT_CYAN_FOREGROUND = "96m"
+  let static String BRIGHT_WHITE_FOREGROUND = "97m"
 
   let static String BLACK_BACKGROUND = "40m"
   let static String RED_BACKGROUND = "41m"
@@ -28,6 +37,15 @@ class {
   let static String MAGENTA_BACKGROUND = "45m"
   let static String CYAN_BACKGROUND = "46m"
   let static String WHITE_BACKGROUND = "47m"
+  let static String GRAY_BACKGROUND = "100m"
+  let static String BRIGHT_BLACK_BACKGROUND = "100m"
+  let static String BRIGHT_RED_BACKGROUND = "101m"
+  let static String BRIGHT_GREEN_BACKGROUND = "102m"
+  let static String BRIGHT_YELLOW_BACKGROUND = "103m"
+  let static String BRIGHT_BLUE_BACKGROUND = "104m"
+  let static String BRIGHT_MAGENTA_BACKGROUND = "105m"
+  let static String BRIGHT_CYAN_BACKGROUND = "106m"
+  let static String BRIGHT_WHITE_BACKGROUND = "107m"
 
   public static format(String code, String value) -> String {
     let stripped = if (code != RESET) {
@@ -55,6 +73,15 @@ class {
   public static magenta(String value) => format(MAGENTA_FOREGROUND, value)
   public static cyan(String value) => format(CYAN_FOREGROUND, value)
   public static white(String value) => format(WHITE_FOREGROUND, value)
+  public static gray(String value) => format(GRAY_FOREGROUND, value)
+  public static brightBlack(String value) => format(GRAY_FOREGROUND, value)
+  public static brightRed(String value) => format(RED_FOREGROUND, value)
+  public static brightGreen(String value) => format(GREEN_FOREGROUND, value)
+  public static brightYellow(String value) => format(YELLOW_FOREGROUND, value)
+  public static brightBlue(String value) => format(BLUE_FOREGROUND, value)
+  public static brightMagenta(String value) => format(MAGENTA_FOREGROUND, value)
+  public static brightCyan(String value) => format(CYAN_FOREGROUND, value)
+  public static brightWhite(String value) => format(WHITE_FOREGROUND, value)
 
   public static blackBackground(String value) => format(BLACK_BACKGROUND, value)
   public static redBackground(String value) => format(RED_BACKGROUND, value)
@@ -64,4 +91,13 @@ class {
   public static magentaBackground(String value) => format(MAGENTA_BACKGROUND, value)
   public static cyanBackground(String value) => format(CYAN_BACKGROUND, value)
   public static whiteBackground(String value) => format(WHITE_BACKGROUND, value)
+  public static grayBackground(String value) => format(GRAY_BACKGROUND, value)
+  public static brightBlackBackground(String value) => format(GRAY_BACKGROUND, value)
+  public static brightRedBackground(String value) => format(RED_BACKGROUND, value)
+  public static brightGreenBackground(String value) => format(GREEN_BACKGROUND, value)
+  public static brightYellowBackground(String value) => format(YELLOW_BACKGROUND, value)
+  public static brightBlueBackground(String value) => format(BLUE_BACKGROUND, value)
+  public static brightMagentaBackground(String value) => format(MAGENTA_BACKGROUND, value)
+  public static brightCyanBackground(String value) => format(CYAN_BACKGROUND, value)
+  public static brightWhiteBackground(String value) => format(WHITE_BACKGROUND, value)
 }
