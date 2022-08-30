@@ -3,60 +3,60 @@ package flat/colorizer
 class {
   let static String PREFIX = "\x1b["
 
-  let static String RESET = "0m"
-  let static String BRIGHT = "1m"
-  let static String DIM = "2m"
-  let static String UNDERSCORE = "4m"
-  let static String BLINK = "5m"
-  let static String REVERSE = "7m"
-  let static String HIDDEN = "8m"
+  let static String RESET = "0"
+  let static String BRIGHT = "1"
+  let static String DIM = "2"
+  let static String UNDERSCORE = "4"
+  let static String BLINK = "5"
+  let static String REVERSE = "7"
+  let static String HIDDEN = "8"
 
-  let static String BLACK_FOREGROUND = "30m"
-  let static String RED_FOREGROUND = "31m"
-  let static String GREEN_FOREGROUND = "32m"
-  let static String YELLOW_FOREGROUND = "33m"
-  let static String BLUE_FOREGROUND = "34m"
-  let static String MAGENTA_FOREGROUND = "35m"
-  let static String CYAN_FOREGROUND = "36m"
-  let static String WHITE_FOREGROUND = "37m"
+  let static String BLACK_FOREGROUND = "30"
+  let static String RED_FOREGROUND = "31"
+  let static String GREEN_FOREGROUND = "32"
+  let static String YELLOW_FOREGROUND = "33"
+  let static String BLUE_FOREGROUND = "34"
+  let static String MAGENTA_FOREGROUND = "35"
+  let static String CYAN_FOREGROUND = "36"
+  let static String WHITE_FOREGROUND = "37"
   let static String RGB_FOREGROUND = "38"
-  let static String GRAY_FOREGROUND = "90m"
-  let static String BRIGHT_BLACK_FOREGROUND = "90m"
-  let static String BRIGHT_RED_FOREGROUND = "91m"
-  let static String BRIGHT_GREEN_FOREGROUND = "92m"
-  let static String BRIGHT_YELLOW_FOREGROUND = "93m"
-  let static String BRIGHT_BLUE_FOREGROUND = "94m"
-  let static String BRIGHT_MAGENTA_FOREGROUND = "95m"
-  let static String BRIGHT_CYAN_FOREGROUND = "96m"
-  let static String BRIGHT_WHITE_FOREGROUND = "97m"
+  let static String GRAY_FOREGROUND = "90"
+  let static String BRIGHT_BLACK_FOREGROUND = "90"
+  let static String BRIGHT_RED_FOREGROUND = "91"
+  let static String BRIGHT_GREEN_FOREGROUND = "92"
+  let static String BRIGHT_YELLOW_FOREGROUND = "93"
+  let static String BRIGHT_BLUE_FOREGROUND = "94"
+  let static String BRIGHT_MAGENTA_FOREGROUND = "95"
+  let static String BRIGHT_CYAN_FOREGROUND = "96"
+  let static String BRIGHT_WHITE_FOREGROUND = "97"
 
-  let static String BLACK_BACKGROUND = "40m"
-  let static String RED_BACKGROUND = "41m"
-  let static String GREEN_BACKGROUND = "42m"
-  let static String YELLOW_BACKGROUND = "43m"
-  let static String BLUE_BACKGROUND = "44m"
-  let static String MAGENTA_BACKGROUND = "45m"
-  let static String CYAN_BACKGROUND = "46m"
-  let static String WHITE_BACKGROUND = "47m"
+  let static String BLACK_BACKGROUND = "40"
+  let static String RED_BACKGROUND = "41"
+  let static String GREEN_BACKGROUND = "42"
+  let static String YELLOW_BACKGROUND = "43"
+  let static String BLUE_BACKGROUND = "44"
+  let static String MAGENTA_BACKGROUND = "45"
+  let static String CYAN_BACKGROUND = "46"
+  let static String WHITE_BACKGROUND = "47"
   let static String RGB_BACKGROUND = "48"
-  let static String GRAY_BACKGROUND = "100m"
-  let static String BRIGHT_BLACK_BACKGROUND = "100m"
-  let static String BRIGHT_RED_BACKGROUND = "101m"
-  let static String BRIGHT_GREEN_BACKGROUND = "102m"
-  let static String BRIGHT_YELLOW_BACKGROUND = "103m"
-  let static String BRIGHT_BLUE_BACKGROUND = "104m"
-  let static String BRIGHT_MAGENTA_BACKGROUND = "105m"
-  let static String BRIGHT_CYAN_BACKGROUND = "106m"
-  let static String BRIGHT_WHITE_BACKGROUND = "107m"
+  let static String GRAY_BACKGROUND = "100"
+  let static String BRIGHT_BLACK_BACKGROUND = "100"
+  let static String BRIGHT_RED_BACKGROUND = "101"
+  let static String BRIGHT_GREEN_BACKGROUND = "102"
+  let static String BRIGHT_YELLOW_BACKGROUND = "103"
+  let static String BRIGHT_BLUE_BACKGROUND = "104"
+  let static String BRIGHT_MAGENTA_BACKGROUND = "105"
+  let static String BRIGHT_CYAN_BACKGROUND = "106"
+  let static String BRIGHT_WHITE_BACKGROUND = "107"
 
   public static format(String code, String value) -> String {
     let stripped = if (code != RESET) {
-      value.replace("#{PREFIX}#{RESET}", "#{PREFIX}#{RESET}#{PREFIX}#{code}")
+      value.replace("#{PREFIX}#{RESET}m", "#{PREFIX}#{RESET}m#{PREFIX}#{code}m")
     } else {
       value
     }
 
-    return "#{PREFIX}#{code}#{stripped}#{PREFIX}#{RESET}"
+    return "#{PREFIX}#{code}m#{stripped}#{PREFIX}#{RESET}m"
   }
 
   public static reset(String value) => format(RESET, value)
@@ -67,8 +67,8 @@ class {
   public static reverse(String value) => format(REVERSE, value)
   public static hidden(String value) => format(HIDDEN, value)
 
-  public static rgb(String value, Int r, Int g, Int b) => format(RGB_FOREGROUND + ";2;#{r};#{g};#{b}m", value)
-  public static foreground256(String value, Int num) => format(RGB_FOREGROUND + ";5;#{num}m", value)
+  public static rgb(String value, Int r, Int g, Int b) => format(RGB_FOREGROUND + ";2;#{r};#{g};#{b}", value)
+  public static foreground256(String value, Int num) => format(RGB_FOREGROUND + ";5;#{num}", value)
   public static black(String value) => format(BLACK_FOREGROUND, value)
   public static red(String value) => format(RED_FOREGROUND, value)
   public static green(String value) => format(GREEN_FOREGROUND, value)
@@ -87,8 +87,8 @@ class {
   public static brightCyan(String value) => format(CYAN_FOREGROUND, value)
   public static brightWhite(String value) => format(WHITE_FOREGROUND, value)
 
-  public static rgbBackground(String value, Int r, Int g, Int b) => format(RGB_BACKGROUND + ";2;#{r};#{g};#{b}m", value)
-  public static background256(String value, Int num) => format(RGB_BACKGROUND + ";5;#{num}m", value)
+  public static rgbBackground(String value, Int r, Int g, Int b) => format(RGB_BACKGROUND + ";2;#{r};#{g};#{b}", value)
+  public static background256(String value, Int num) => format(RGB_BACKGROUND + ";5;#{num}", value)
   public static blackBackground(String value) => format(BLACK_BACKGROUND, value)
   public static redBackground(String value) => format(RED_BACKGROUND, value)
   public static greenBackground(String value) => format(GREEN_BACKGROUND, value)
