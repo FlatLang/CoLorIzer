@@ -2,8 +2,8 @@ package flat/colorizer
 
 import novex/nest/TestResult
 
-import flatlang/time/Timer
-import flatlang/io/FancyOutputStream
+import flat/time/Timer
+import flat/io/FancyOutputStream
 
 [TestSuite [
   Colorizer_Test
